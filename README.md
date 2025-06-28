@@ -1,5 +1,17 @@
-# n8n with squoosh-cli
+# n8n + Squoosh CLI Docker Image
 
-Custom Dockerfile for n8n with @squoosh/cli installed.
+## Build
 
-#
+```sh
+docker build -t my-n8n-squoosh .
+```
+
+## Run
+
+```sh
+docker run -it --rm -p 5678:5678 my-n8n-squoosh
+```
+
+## Use Squoosh CLI
+
+Inside the container, you can use `squoosh-cli` in n8n workflows via the Execute Command node.
