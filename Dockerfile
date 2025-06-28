@@ -1,7 +1,7 @@
 FROM n8nio/n8n:latest
 
 USER root
-RUN apt-get update && apt-get install -y build-essential
+RUN apk add --no-cache build-base python3
 
 RUN npm install -g @squoosh/cli
 
