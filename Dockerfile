@@ -6,7 +6,6 @@ RUN apk add --no-cache build-base python3
 RUN npm install -g @squoosh/cli
 
 USER node
+WORKDIR /home/node
 
-EXPOSE 5678
-
-CMD ["n8n"]
+# No need to set CMD, n8n image already does this
