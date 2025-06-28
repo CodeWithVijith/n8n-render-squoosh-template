@@ -1,0 +1,23 @@
+{
+  "name": "image-compression-service",
+  "version": "1.0.0",
+  "description": "A serverless function or microservice for compressing images using squoosh-cli.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "squoosh-cli": "^0.1.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "image",
+    "compression",
+    "squoosh",
+    "express",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC"
+}
