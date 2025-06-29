@@ -1,62 +1,27 @@
-# Image Compression Service
+# n8n with Squoosh CLI on Render
 
-This project is a simple image compression service built using Node.js and Express. It utilizes the `squoosh-cli` to compress images uploaded via an API endpoint.
+This is a custom Docker-based deployment of [n8n](https://n8n.io) with `squoosh-cli` support for image compression workflows.
 
-## Table of Contents
+## 🐳 What's Inside
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [API](#api)
-- [License](#license)
+- Based on `n8nio/n8n` official image
+- Adds global `@squoosh/cli` using npm
+- Deployable to [Render.com](https://render.com) using Docker
 
-## Installation
+## 🚀 Deployment Instructions
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/yourusername/image-compression-service.git
-   ```
+1. Clone this repo
+2. Push it to your own GitHub repo
+3. Go to [Render.com > New Web Service](https://dashboard.render.com/new/web-service)
+4. Select this repo and choose:
+   - **Environment:** Docker
+   - **Dockerfile path:** `./Dockerfile`
+   - Set the necessary environment variables (e.g., `N8N_BASIC_AUTH_USER`, etc.)
 
-2. Navigate to the project directory:
-   ```
-   cd image-compression-service
-   ```
+## 🧪 Verify Squoosh Works
 
-3. Install the dependencies:
-   ```
-   npm install
-   ```
-
-## Usage
-
-To start the server, run the following command:
-```
-npm start
-```
-
-The server will start on `http://localhost:3000`.
-
-## API
-
-### POST /compress
-
-This endpoint allows you to upload an image for compression.
-
-#### Request
-
-- **Content-Type**: `multipart/form-data`
-- **Body**: An image file (e.g., `.jpg`, `.png`)
-
-#### Response
-
-- **200 OK**: Returns the compressed image.
-- **400 Bad Request**: If the uploaded file is not an image.
-
-#### Example
+Once n8n is live, use an `Execute Command` node like:
 
 ```bash
-curl -X POST http://localhost:3000/compress -F "image=@path/to/image.jpg"
+squoosh-cli --mozjpeg '{"quality":75}' /tmp/input.jpg -d /tmp/output
 ```
-
-## License
-
-This project is licensed under the MIT License.
