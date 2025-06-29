@@ -5,7 +5,7 @@ FROM node:18-slim
 WORKDIR /data
 
 # Install n8n and squoosh-cli globally
-RUN npm install -g n8n@1.44.0 @squoosh/cli
+RUN npm install -g n8n@1.44.0 @squoosh/cli@0.4.0
 
 # Create volume for persistent data
 VOLUME ["/home/node/.n8n"]
