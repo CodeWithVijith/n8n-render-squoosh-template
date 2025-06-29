@@ -1,5 +1,5 @@
 # Start from official n8n image
-FROM n8nio/n8n:latest
+FROM n8nio/n8n:1.44.0
 
 # Switch to root to install dependencies
 USER root
