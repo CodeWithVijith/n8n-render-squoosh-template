@@ -1,5 +1,5 @@
 # Use a Node.js version compatible with squoosh-cli
-FROM node:20-slim
+FROM node:18-slim
 
 # Set working directory
 WORKDIR /data
